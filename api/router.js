@@ -1,13 +1,10 @@
 'use strict';
 
 import { Router } from 'express';
-import variables from './routes/variables';
-import order from './routes/order';
-
+import todos from './routes/todos';
 
 const router = Router();
 
-router.use('/variables', variables);
-router.use('/order', order);
+router.use('/todos', todos);
 
 export default router;
