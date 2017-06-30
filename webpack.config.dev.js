@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+const path = require('path');
 
 export default {
   devtool: 'cheap-module-eval-source-map',
@@ -29,7 +30,7 @@ export default {
     loaders: [
       {
         test: /\.js$/,
-        include: `${__dirname}/app`,
+        include: path.join(__dirname, 'app'),
         loader: 'babel',
         query: {
           cacheDirectory: true
@@ -37,11 +38,11 @@ export default {
       },
       {
         test: /\.css$/,
-        loader: "style-loader!css-loader" 
+        loader: "style-loader!css-loader"
       },
       {
         test: /\.scss$/,
-        include: `${__dirname}/app`,
+        include: path.join(__dirname, 'app'),
         loaders: [
           'style',
           'css?sourceMap',
